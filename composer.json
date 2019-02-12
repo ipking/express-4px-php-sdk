@@ -1,0 +1,21 @@
+{
+    "name": "ipking/express-4px-php",
+    "description": "express 4px PHP API.",
+    "type": "library",
+    "license": "Apache-2.0",
+	"homepage": "https://github.com/ipking/express-4px-php-sdk/",
+    "authors": [{
+        "name": "ipking",
+        "email": "667997@gmail.com"
+    }],
+    "require": {
+        "php": ">=5.5.0",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "express_4px\\": "src/"
+        }
+    }
+}

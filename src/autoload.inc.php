@@ -1,5 +1,5 @@
 <?php
-namespace express_4px;;
+namespace express_4px;
 include 'config.inc.php';
 
 if ( strnatcasecmp(PHP_VERSION, '5.5') < 0 ) {

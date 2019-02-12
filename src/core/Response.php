@@ -4,8 +4,12 @@ namespace express_4px\core;
 
 
 class Response extends DataProto{
-	public $code;
-	public $message;
+	const RESULT_SUCCESS = '1';
+	const RESULT_FAIL = '0';
+	
+	public $result;
+	public $errors;
+	public $msg;
 	
 	const PARAM_REQUIRED = 'required';
 	const PARAM_OPTIONAL = 'optional';
@@ -17,9 +21,10 @@ class Response extends DataProto{
 	
 	private $defines;
 	
-	public function __construct($code, $message = '', $data = array(), $defines = array()){
-		$this->code = $code;
-		$this->message = $message;
+	public function __construct($result,$errors, $message = '', $data = array(), $defines = array()){
+		$this->result = $result;
+		$this->errors = $errors;
+		$this->msg = $message;
 		$this->defines = $defines;
 		if(empty($data)){
 			return;
@@ -59,9 +64,10 @@ class Response extends DataProto{
 	 */
 	public function __toString(){
 		return json_encode(array(
-			'code'    => $this->code,
-			'message' => $this->message,
-			'data'    => $this->getData()
+			'result' => $this->result,
+			'errors' => $this->errors,
+			'msg'    => $this->msg,
+			'data'   => $this->getData()
 		));
 	}
 	
@@ -88,13 +94,13 @@ class Response extends DataProto{
 		$ins->setData($data);
 		return $ins;
 	}
+	
 	/**
 	 * 界定成功状态
 	 * @return mixed
 	 */
 	public function isSuccess(){
-		return ResponseCode::getCodeType($this->code) == ResponseCode::TYPE_SUCCESS ||
-			$this->code == ResponseCode::TYPE_SUCCESS;
+		return $this->result == self::RESULT_SUCCESS;
 	}
 	
 	public function isFailure(){

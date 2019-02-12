@@ -5,6 +5,17 @@
 
 namespace express_4px\oms\fu_wms_sku_create\v100;
 
+use express_4px\oms\fu_wms_sku_create\v100\data_type\AppearanceEnum;
+use express_4px\oms\fu_wms_sku_create\v100\data_type\BatteryConfigEnum;
+use express_4px\oms\fu_wms_sku_create\v100\data_type\BatteryTypeEnum;
+use express_4px\oms\fu_wms_sku_create\v100\data_type\ExpiredDateEnum;
+use express_4px\oms\fu_wms_sku_create\v100\data_type\IncludeBatchEnum;
+use express_4px\oms\fu_wms_sku_create\v100\data_type\IncludeBatteryEnum;
+use express_4px\oms\fu_wms_sku_create\v100\data_type\LogisticsPackageEnum;
+use express_4px\oms\fu_wms_sku_create\v100\data_type\PackageMaterialEnum;
+use express_4px\oms\fu_wms_sku_create\v100\data_type\ReleaseFlagEnum;
+use express_4px\oms\fu_wms_sku_create\v100\data_type\SnRuleCodeEnum;
+use express_4px\oms\fu_wms_sku_create\v100\data_type\WrappingEnum;
 use express_4px\oms\OmsParameter;
 
 /**
@@ -49,28 +60,28 @@ class CreateSkuParameter extends OmsParameter
 			'sku_name'             => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
 			'specification'        => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'uom'                  => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
-			'wrapping'             => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
-			'appearance'           => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'wrapping'             => [self::PARAM_TYPE_ENUM, self::PARAM_REQUIRED,WrappingEnum::class],
+			'appearance'           => [self::PARAM_TYPE_ENUM, self::PARAM_OPTIONAL,AppearanceEnum::class],
 			'characteristic'       => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL, self::PARAM_TYPE_STRING],
 			'weight'               => [self::PARAM_TYPE_NUM, self::PARAM_REQUIRED],
 			'length'               => [self::PARAM_TYPE_NUM, self::PARAM_REQUIRED],
 			'width'                => [self::PARAM_TYPE_NUM, self::PARAM_REQUIRED],
 			'height'               => [self::PARAM_TYPE_NUM, self::PARAM_REQUIRED],
-			'logistics_package'    => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
-			'package_material'     => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
-			'sn_rule_code'         => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'expired_date'         => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'logistics_package'    => [self::PARAM_TYPE_ENUM, self::PARAM_REQUIRED,LogisticsPackageEnum::class],
+			'package_material'     => [self::PARAM_TYPE_ENUM, self::PARAM_REQUIRED,PackageMaterialEnum::class],
+			'sn_rule_code'         => [self::PARAM_TYPE_ENUM, self::PARAM_OPTIONAL,SnRuleCodeEnum::class],
+			'expired_date'         => [self::PARAM_TYPE_ENUM, self::PARAM_OPTIONAL,ExpiredDateEnum::class],
 			'sales_link'           => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'include_batch'        => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'include_battery'      => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'battery_config'       => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'battery_type'         => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'include_batch'        => [self::PARAM_TYPE_ENUM, self::PARAM_OPTIONAL,IncludeBatchEnum::class],
+			'include_battery'      => [self::PARAM_TYPE_ENUM, self::PARAM_OPTIONAL,IncludeBatteryEnum::class],
+			'battery_config'       => [self::PARAM_TYPE_ENUM, self::PARAM_OPTIONAL,BatteryConfigEnum::class],
+			'battery_type'         => [self::PARAM_TYPE_ENUM, self::PARAM_OPTIONAL,BatteryTypeEnum::class],
 			'battery_power'        => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'battery_number'       => [self::PARAM_TYPE_NUM, self::PARAM_OPTIONAL],
 			'battery_resource'     => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'picture_url'          => [self::PARAM_TYPE_ARRAY, self::PARAM_REQUIRED, self::PARAM_TYPE_STRING],
 			'remark'               => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'release_flag'         => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'release_flag'         => [self::PARAM_TYPE_ENUM, self::PARAM_OPTIONAL,ReleaseFlagEnum::class],
 			'customer_code'        => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 		));
 	}

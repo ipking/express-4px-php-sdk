@@ -126,7 +126,7 @@ class Parameter extends DataProto{
 				$refClass = new \ReflectionClass($ext_define_type);
 				$enumValues = $refClass->getConstants();
 
-				if (!in_array($value, $enumValues)) {
+				if ($required == self::PARAM_REQUIRED && !in_array($value, $enumValues)) {
 					throw new ParamValidateException('parameter ['.$field.'] is not a valid enum value');
 				}
 				break;

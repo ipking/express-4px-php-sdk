@@ -69,6 +69,7 @@ if ( $rsp->isSuccess() ) {
 	var_dump($data);
 	
 	echo $rsp->consignment_no.PHP_EOL;
+	echo $rsp->tracking_no.PHP_EOL;
 } else {
 	var_dump( $rsp->errors );     //错误码
 	var_dump( $rsp->msg );  //错误信息

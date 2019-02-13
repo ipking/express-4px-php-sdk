@@ -4,6 +4,7 @@
  */
 
 namespace express_4px\oms\fu_wms_inbound_create\v100;
+use express_4px\oms\OmsErrorCode;
 use express_4px\oms\OmsResponse;
 
 /**
@@ -12,11 +13,8 @@ use express_4px\oms\OmsResponse;
  */
 class CreateInboundResponse extends OmsResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
-		$code_message = CreateInboundErrorCode::$codeMessageMap;
-		$error_code = strtoupper($errors[0]['error_code']);
-		$error_data = $errors[0]['error_data'];
-		!empty($code_message[$error_code]) && ($message = $code_message[$error_code].($error_data?':'.$error_data:''));
-		
+		$msg = OmsErrorCode::getMsg(CreateInboundErrorCode::$codeMessageMap,$errors);
+		$msg and $message = $msg;
 		parent::__construct($result,$errors, $message, $data, array(
 			'consignment_no'  => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'4px_tracking_no' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],

@@ -8,7 +8,7 @@
  * D5(非一般贸易)；
  * D6(手册报关)
  */
-namespace express_4px\oms\data_type\inbound;
+namespace express_4px\oms\data_type\outbound;
 
 class OcustomsServiceEnum
 {

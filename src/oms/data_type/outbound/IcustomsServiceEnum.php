@@ -6,7 +6,7 @@
  * D3(客户自有税号清关)；
  * D4(非客户自有税号清关)
  */
-namespace express_4px\oms\data_type\inbound;
+namespace express_4px\oms\data_type\outbound;
 
 class IcustomsServiceEnum
 {

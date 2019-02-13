@@ -2,7 +2,11 @@
 
 namespace express_4px\core;
 
-
+/**
+ * @property string result
+ * @property array errors
+ * @property string msg
+ */
 class Response extends DataProto{
 	const RESULT_SUCCESS = '1';
 	const RESULT_FAIL = '0';

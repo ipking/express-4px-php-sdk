@@ -1,6 +1,6 @@
 <?php
 /**
- * 创建入库委托示例
+ * 取消入库委托示例
  */
 use express_4px\oms\fu_wms_inbound_cancel\v100\CancelInboundClient;
 use express_4px\oms\fu_wms_inbound_cancel\v100\CancelInboundParameter;

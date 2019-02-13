@@ -1,42 +1,28 @@
 <?php
 
-/**
- * alias for debug
- * @param mixed $vars 要输出的变量
- * @param null $var1
- * @return string
- *
- */
-if(!function_exists('dump')) {
-	function dump($vars, $var1 = null)
-	{
-		$params = func_get_args();
-		$tmp = $params;
-		$cli = PHP_SAPI == 'cli';
+use express_4px\oms\OmsClient;
 
-		//normal debug
-		if (count($params) > 0) {
-			$act = array_pop($tmp) === 1;
-			$params = $act ? array_slice($params, 0, -1) : $params;
-			echo $cli ? "\n" : '<pre style="font-size:12px; background-color:#eee; color:green; margin:0 0 10px 0; padding:0.5em; border-bottom:1px solid gray; width:100%; left:0; top:0; text-transform: none;">' . "\n";
-			$comma = '';
-			foreach ($params as $var) {
-				echo $comma;
-				var_dump($var);
-				$trace = debug_backtrace();
-				echo "File:" . ($cli ? '' : '<b style="color:gray">') . $trace[0]['file'] . ($cli ? '' : '</b><br/>') . " Line: " . ($cli ? '' : '<b>') . $trace[0]['line'] . ($cli ? "\n" : '"</b><br/>"');
-				$comma = $cli ? "\n" : '<div style="height:0; line-height:1px; font-size:1px; border-bottom:1px solid white; border-top:1px solid #ccc; margin:10px 0"></div>';
-			}
-			echo $cli ? '' : '</pre>';
-			if ($act) {
-				die();
-			}
-		} //for tick debug
-		else {
-			if (++$GLOBALS['ONLY_FOR_DEBUG_INDEX'] >= $GLOBALS['TICK_DEBUG_START_INDEX']) {
-				$trace = debug_backtrace();
-				echo '<pre style="display:block; font-size:12px; color:green; padding:2px 0; border-bottom:1px solid #ddd; clear:both;">' . '[' . ($GLOBALS['ONLY_FOR_DEBUG_INDEX']) . '] <b>' . $trace[0]['file'] . '</b> line:' . $trace[0]['line'] . '</pre>';
-			}
-		}
-	}
+class config {
+	const ENV_DEV = 'DEV';
+	const ENV_PROD = 'PROD';
+	
+	/**
+	 * 应用所接入环境 默认为沙箱环境  如果测试通过可以转到正式环境
+	 */
+	const APP_ENV = self::ENV_DEV;
+	
+	/**
+	 * 应用接入申请的AppKey
+	 */
+	const APP_KEY = 'f63914c1-5559-4762-b561-7f759aa849d9';
+	
+	/**
+	 * 应用接入申请的AppSecret
+	 */
+	const APP_SECRET = '30eb6b31-ad6f-4281-8292-83c00aa96891';
+	
+}
+
+if(config::APP_ENV == config::ENV_PROD){
+	OmsClient::prodEnv();
 }

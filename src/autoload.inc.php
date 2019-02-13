@@ -1,6 +1,5 @@
 <?php
 namespace express_4px;
-include 'config.inc.php';
 
 if ( strnatcasecmp(PHP_VERSION, '5.5') < 0 ) {
 	exit('PHP version must be newer then 5.5');

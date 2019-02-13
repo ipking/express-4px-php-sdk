@@ -6,6 +6,7 @@ use express_4px\oms\fu_wms_sku_getlist\v100\GetSkuListClient;
 use express_4px\oms\fu_wms_sku_getlist\v100\GetSkuListParameter;
 
 include_once dirname(dirname(dirname(dirname(__FILE__)))) . "/src/autoload.inc.php";
+include_once dirname(dirname(__FILE__)) . "/config.inc.php";
 
 $json =<<<EOL
 {
@@ -20,7 +21,7 @@ EOL;
 $parameter = new GetSkuListParameter( json_decode($json,true));
 GetSkuListClient::$debug = true;
 $client = new GetSkuListClient($parameter);   //构造请求对象，将请求参数传入
-$client->setAuthInfo('f63914c1-5559-4762-b561-7f759aa849d9', '30eb6b31-ad6f-4281-8292-83c00aa96891'); //设置认证信息：AppKey, AppSecret
+$client->setAuthInfo(config::APP_KEY, config::APP_SECRET); //设置认证信息：AppKey, AppSecret
 
 //发送请求，获取返回数据
 $rsp = $client->send();

@@ -23,6 +23,10 @@ class config {
 	
 }
 
+//开启调试
+OmsClient::$debug = true;
+
 if(config::APP_ENV == config::ENV_PROD){
+	//使用正式环境
 	OmsClient::prodEnv();
 }

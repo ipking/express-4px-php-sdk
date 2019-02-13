@@ -52,7 +52,7 @@ EOL;
 
 //构造请求参数
 $parameter = new CreateSkuParameter( json_decode($json,true));
-CreateSkuClient::$debug = true;
+
 $client = new CreateSkuClient($parameter);   //构造请求对象，将请求参数传入
 $client->setAuthInfo(config::APP_KEY, config::APP_SECRET); //设置认证信息：AppKey, AppSecret
 

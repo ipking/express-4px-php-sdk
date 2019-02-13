@@ -2,7 +2,7 @@
 
 namespace express_4px\core;
 
-use Exception;
+use express_4px\exception\HttpException;
 
 /**
  * HTTP请求基类
@@ -29,12 +29,12 @@ abstract class Curl{
 	 * 获取CURL实例
 	 * @param $url
 	 * @param array $curl_option
-	 * @throws Exception
+	 * @throws HttpException
 	 * @return resource
 	 */
 	private static function getCurlInstance($url, $curl_option = array()){
 		if(!$url){
-			throw new Exception('CURL URL NEEDED');
+			throw new HttpException('CURL URL NEEDED');
 		}
 		
 		//use ssl
@@ -59,7 +59,7 @@ abstract class Curl{
 		
 		$max_execution_time = ini_get('max_execution_time');
 		if($max_execution_time && $curl_option[CURLOPT_TIMEOUT] && $curl_option[CURLOPT_TIMEOUT]>$max_execution_time){
-			throw new Exception('curl timeout setting larger than php.ini max_execution_time setting');
+			throw new HttpException('curl timeout setting larger than php.ini max_execution_time setting');
 		}
 		
 		$curl = curl_init();
@@ -83,7 +83,7 @@ abstract class Curl{
 	 * @param string $url URL
 	 * @param int $timeout 请求时间
 	 * @param array $curl_option
-	 * @throws Exception
+	 * @throws HttpException
 	 * @return bool|mixed
 	 */
 	public static function get($url, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
@@ -96,7 +96,7 @@ abstract class Curl{
 		$content = curl_exec($curl);
 		$curl_errno = curl_errno($curl);
 		if($curl_errno>0){
-			throw new Exception(curl_error($curl));
+			throw new HttpException(curl_error($curl));
 		}
 		curl_close($curl);
 		return $content;
@@ -108,7 +108,7 @@ abstract class Curl{
 	 * @param String $data POST数据
 	 * @param int $timeout 请求时间
 	 * @param array $curl_option
-	 * @throws Exception
+	 * @throws HttpException
 	 * @return bool|mixed
 	 */
 	public static function post($url, $data, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
@@ -125,7 +125,7 @@ abstract class Curl{
 		$curl_errno = curl_errno($curl);
 		$curl_msg = curl_error($curl);
 		if($curl_errno>0){
-			throw new Exception($curl_msg);
+			throw new HttpException($curl_msg);
 		}
 		curl_close($curl);
 		return $content;
@@ -139,7 +139,7 @@ abstract class Curl{
 	 * @param int $timeout
 	 * @param array $curl_option
 	 * @return mixed
-	 * @throws \Exception
+	 * @throws HttpException
 	 */
 	public static function postFiles($url, $data = array(), array $files, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
 		$opt = array(
@@ -156,7 +156,7 @@ abstract class Curl{
 		$curl_errno = curl_errno($curl);
 		$curl_msg = curl_error($curl);
 		if($curl_errno>0){
-			throw new Exception($curl_msg);
+			throw new HttpException($curl_msg);
 		}
 		curl_close($curl);
 		return $content;
@@ -190,7 +190,7 @@ abstract class Curl{
 				case false === $v = realpath(filter_var($v)):
 				case !is_file($v):
 				case !is_readable($v):
-					continue; // or return false, throw new InvalidArgumentException
+					continue; // or return false, throw new InvalidArgumentHttpException
 			}
 			$data = file_get_contents($v);
 			$v = call_user_func("end", explode(DIRECTORY_SEPARATOR, $v));
@@ -268,7 +268,7 @@ abstract class Curl{
 	 * @param array $data POST数据
 	 * @param int $timeout 请求时间
 	 * @param array $curl_option
-	 * @throws Exception
+	 * @throws HttpException
 	 * @return bool|mixed
 	 */
 	public static function put($url, $data, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
@@ -286,7 +286,7 @@ abstract class Curl{
 		$content = curl_exec($curl);
 		$curl_errno = curl_errno($curl);
 		if($curl_errno>0){
-			throw new Exception($curl_errno);
+			throw new HttpException($curl_errno);
 		}
 		curl_close($curl);
 		return $content;
@@ -298,7 +298,7 @@ abstract class Curl{
 	 * @param array $data POST数据
 	 * @param int $timeout 请求时间
 	 * @param array $curl_option
-	 * @throws Exception
+	 * @throws HttpException
 	 * @return bool|mixed
 	 */
 	public static function del($url, $data, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
@@ -316,7 +316,7 @@ abstract class Curl{
 		$content = curl_exec($curl);
 		$curl_errno = curl_errno($curl);
 		if($curl_errno>0){
-			throw new Exception($curl_errno);
+			throw new HttpException($curl_errno);
 		}
 		curl_close($curl);
 		return $content;

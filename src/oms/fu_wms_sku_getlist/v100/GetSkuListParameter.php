@@ -5,17 +5,6 @@
 
 namespace express_4px\oms\fu_wms_sku_getlist\v100;
 
-use express_4px\oms\fu_wms_sku_create\v100\data_type\AppearanceEnum;
-use express_4px\oms\fu_wms_sku_create\v100\data_type\BatteryConfigEnum;
-use express_4px\oms\fu_wms_sku_create\v100\data_type\BatteryTypeEnum;
-use express_4px\oms\fu_wms_sku_create\v100\data_type\ExpiredDateEnum;
-use express_4px\oms\fu_wms_sku_create\v100\data_type\IncludeBatchEnum;
-use express_4px\oms\fu_wms_sku_create\v100\data_type\IncludeBatteryEnum;
-use express_4px\oms\fu_wms_sku_create\v100\data_type\LogisticsPackageEnum;
-use express_4px\oms\fu_wms_sku_create\v100\data_type\PackageMaterialEnum;
-use express_4px\oms\fu_wms_sku_create\v100\data_type\ReleaseFlagEnum;
-use express_4px\oms\fu_wms_sku_create\v100\data_type\SnRuleCodeEnum;
-use express_4px\oms\fu_wms_sku_create\v100\data_type\WrappingEnum;
 use express_4px\oms\OmsParameter;
 
 /**

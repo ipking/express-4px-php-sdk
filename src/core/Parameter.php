@@ -2,6 +2,8 @@
 
 namespace express_4px\core;
 
+use express_4px\exception\ParamValidateException;
+
 class Parameter extends DataProto{
 	const PARAM_REQUIRED = 'required';
 	const PARAM_OPTIONAL = 'optional';
@@ -69,7 +71,7 @@ class Parameter extends DataProto{
 	 * @param $value
 	 * @param $field
 	 * @throws \Exception
-	 * @throws \express_4px\core\ParamValidateException
+	 * @throws ParamValidateException
 	 */
 	public function validate($define, $value, $field){
 		list($type, $required, $ext_define_type) = $define;
@@ -155,8 +157,4 @@ class Parameter extends DataProto{
 	public function getDefines(){
 		return $this->defines;
 	}
-}
-
-class ParamValidateException extends \Exception{
-	
 }

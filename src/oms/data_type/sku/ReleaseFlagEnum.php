@@ -9,4 +9,9 @@ class ReleaseFlagEnum
 {
 	const RELEASE_FLAG_Y = 'Y';
 	const RELEASE_FLAG_N = 'N';
+	
+	static $map = array(
+		self::RELEASE_FLAG_Y => '自动审核',
+		self::RELEASE_FLAG_N => '不审核',
+	);
 }

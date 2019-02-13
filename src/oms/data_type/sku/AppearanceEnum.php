@@ -14,4 +14,14 @@ class AppearanceEnum
 	const APPEARANCE_LS = 'LS';
 	const APPEARANCE_OS = 'OS';
 	const APPEARANCE_DS = 'DS';
+	
+	static $map = array(
+		self::APPEARANCE_SS => '正方体',
+		self::APPEARANCE_RS => '长方体',
+		self::APPEARANCE_CS => '圆锥体',
+		self::APPEARANCE_TS => '三角形',
+		self::APPEARANCE_LS => 'L形',
+		self::APPEARANCE_OS => '其它',
+		self::APPEARANCE_DS => '圆柱体',
+	);
 }

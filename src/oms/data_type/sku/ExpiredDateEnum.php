@@ -9,4 +9,9 @@ class ExpiredDateEnum
 {
 	const EXPIRED_DATE_Y = 'Y';
 	const EXPIRED_DATE_N = 'N';
+	
+	static $map = array(
+		self::EXPIRED_DATE_Y => '是',
+		self::EXPIRED_DATE_N => '否',
+	);
 }

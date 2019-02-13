@@ -9,4 +9,9 @@ class WrappingEnum
 {
 	const WRAPPING_H = 'H';
 	const WRAPPING_S = 'S';
+	
+	static $map = array(
+		self::WRAPPING_H => '硬包装',
+		self::WRAPPING_S => '软包装',
+	);
 }

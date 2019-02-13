@@ -1,9 +1,9 @@
 <?php
 /**
- * 创建SKU的参数
+ * 创建入库委托的参数
  */
 
-namespace express_4px\oms\fu_wms_sku_create\v100;
+namespace express_4px\oms\fu_wms_inbound_create\v100;
 
 use express_4px\oms\data_type\sku\AppearanceEnum;
 use express_4px\oms\data_type\sku\BatteryConfigEnum;
@@ -49,7 +49,7 @@ use express_4px\oms\OmsParameter;
  * @property string release_flag 自动审核标识(默认：Y自动审核)。可选值 : Y (自动审核)；N(不审核)；
  * @property string customer_code 客户操作账号。如果客户存在操作账号管理，则SKU创建成功后，返回SKU_ID为空，如果客户不存在操作账号管理，则返回SKU_ID信息。
  */
-class CreateSkuParameter extends OmsParameter
+class CreateInboundParameter extends OmsParameter
 {
 	public function __construct($data = [])
 	{

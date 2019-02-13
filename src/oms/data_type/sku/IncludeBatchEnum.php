@@ -9,4 +9,9 @@ class IncludeBatchEnum
 {
 	const INCLUDE_BATCH_Y = 'Y';
 	const INCLUDE_BATCH_N = 'N';
+	
+	static $map = array(
+		self::INCLUDE_BATCH_Y => '是',
+		self::INCLUDE_BATCH_N => '否',
+	);
 }

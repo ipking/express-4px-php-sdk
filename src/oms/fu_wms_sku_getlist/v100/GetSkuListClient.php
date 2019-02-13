@@ -1,6 +1,6 @@
 <?php
 /**
- * 创建SKU
+ * 获取SKU列表
  */
 
 namespace express_4px\oms\fu_wms_sku_getlist\v100;

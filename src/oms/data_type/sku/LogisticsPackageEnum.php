@@ -9,4 +9,9 @@ class LogisticsPackageEnum
 {
 	const LOGISTICS_PACKAGE_Y = 'Y';
 	const LOGISTICS_PACKAGE_N = 'N';
+	
+	static $map = array(
+		self::LOGISTICS_PACKAGE_Y => '是',
+		self::LOGISTICS_PACKAGE_N => '否',
+	);
 }

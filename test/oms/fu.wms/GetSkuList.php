@@ -12,7 +12,7 @@ $json =<<<EOL
 {
 	"lstsku": [
 		"SKUCODE",
-		"CES-ST1"
+		"SKUCODE1"
 	]
 }
 EOL;

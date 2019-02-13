@@ -12,4 +12,12 @@ class BatteryTypeEnum
 	const BATTERY_TYPE_DR = 'DR';
 	const BATTERY_TYPE_BU = 'BU';
 	const BATTERY_TYPE_OT = 'OT';
+	
+	static $map = array(
+		self::BATTERY_TYPE_LI => '锂电池',
+		self::BATTERY_TYPE_NI => '镍氢电池',
+		self::BATTERY_TYPE_DR => '干电池',
+		self::BATTERY_TYPE_BU => '纽扣电池',
+		self::BATTERY_TYPE_OT => '其他',
+	);
 }

@@ -11,4 +11,11 @@ class BatteryConfigEnum
 	const BATTERY_CONFIG_PB = 'PB';
 	const BATTERY_CONFIG_IB = 'IB';
 	const BATTERY_CONFIG_NB = 'NB';
+	
+	static $map = array(
+		self::BATTERY_CONFIG_EB => '配套',
+		self::BATTERY_CONFIG_PB => '纯电',
+		self::BATTERY_CONFIG_IB => '内置',
+		self::BATTERY_CONFIG_NB => '其他',
+	);
 }

@@ -9,4 +9,9 @@ class IncludeBatteryEnum
 {
 	const INCLUDE_BATTERY_Y = 'Y';
 	const INCLUDE_BATTERY_N = 'N';
+	
+	static $map = array(
+		self::INCLUDE_BATTERY_Y => '是',
+		self::INCLUDE_BATTERY_N => '否',
+	);
 }

@@ -10,4 +10,10 @@ class SnRuleCodeEnum
 	const SN_RULE_CODE_01 = '01';
 	const SN_RULE_CODE_02 = '02';
 	const SN_RULE_CODE_03 = '03';
+	
+	static $map = array(
+		self::SN_RULE_CODE_01 => '15位数字',
+		self::SN_RULE_CODE_02 => '18位数字',
+		self::SN_RULE_CODE_03 => '12位字符',
+	);
 }

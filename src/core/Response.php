@@ -18,6 +18,7 @@ class Response extends DataProto{
 	const PARAM_TYPE_STRING = 'string';
 	const PARAM_TYPE_OBJECT = 'object';
 	const PARAM_TYPE_ARRAY = 'array';
+	const PARAM_TYPE_LIST = self::PARAM_TYPE_ARRAY;
 	
 	private $defines;
 	
@@ -69,30 +70,6 @@ class Response extends DataProto{
 			'msg'    => $this->msg,
 			'data'   => $this->getData()
 		));
-	}
-	
-	/**
-	 * 成功
-	 * @param $code
-	 * @param null $message
-	 * @param null $data
-	 * @return static
-	 */
-	public static function failure($code, $message = null, $data = null){
-		$ins = new static($code, $message ?: ResponseCode::$codeMessageMap[$code]);
-		$ins->setData($data);
-		return $ins;
-	}
-	
-	/**
-	 * @param null $data
-	 * @param int $code
-	 * @return static
-	 */
-	public static function success($data = null, $code = ResponseCode::CODE_OK){
-		$ins = new static($code, ResponseCode::$codeMessageMap[$code]);
-		$ins->setData($data);
-		return $ins;
 	}
 	
 	/**

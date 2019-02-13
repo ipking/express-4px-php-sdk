@@ -3,7 +3,7 @@
 /**
  * 是否批次管理。可选值 : Y（是）;N （否）。*注：选择Y后，必须在入库预报进行批次的设置
  */
-namespace express_4px\oms\fu_wms_sku_create\v100\data_type;
+namespace express_4px\oms\data_type\sku;
 
 class IncludeBatchEnum
 {

@@ -3,7 +3,7 @@
 /**
  * SN码规则编码。 可选值 : 01 (15位数字)；02 (18位数字)；03 (12位字符)。如果SKU无SN码管理则为空。
  */
-namespace express_4px\oms\fu_wms_sku_create\v100\data_type;
+namespace express_4px\oms\data_type\sku;
 
 class SnRuleCodeEnum
 {

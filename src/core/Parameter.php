@@ -10,6 +10,7 @@ class Parameter extends DataProto{
 	const PARAM_TYPE_STRING = 'string';
 	const PARAM_TYPE_OBJECT = 'object';
 	const PARAM_TYPE_ARRAY = 'array';
+	const PARAM_TYPE_LIST = self::PARAM_TYPE_ARRAY;
 	const PARAM_TYPE_ENUM = 'enum';
 
 	private $defines;

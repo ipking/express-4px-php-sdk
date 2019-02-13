@@ -3,7 +3,7 @@
 /**
  * 电池类型。 可选值 : LI (锂电池)；NI (镍氢电池)；DR (干电池)；BU (纽扣电池)；OT (其他）
  */
-namespace express_4px\oms\fu_wms_sku_create\v100\data_type;
+namespace express_4px\oms\data_type\sku;
 
 class BatteryTypeEnum
 {

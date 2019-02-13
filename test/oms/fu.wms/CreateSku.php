@@ -25,7 +25,7 @@ $json =<<<EOL
 	"battery_resource": "",
 	"remark": "create sku",
 	"release_flag": "",
-	"customer_code": "900278",
+	"customer_code": "",
 	"declare_product_code": "",
 	"sku_code": "SKUCODE",
 	"sku_name": "SKUNAME",
@@ -62,6 +62,9 @@ $rsp = $client->send();
 if ( $rsp->isSuccess() ) {
 	$data = $rsp->getData();    //返回数据
 	var_dump($data);
+	
+	echo $rsp->sku_code.PHP_EOL;
+	echo $rsp->sku_id.PHP_EOL;
 } else {
 	var_dump( $rsp->errors );     //错误码
 	var_dump( $rsp->msg );  //错误信息

@@ -8,8 +8,8 @@ use express_4px\oms\OmsErrorCode;
 use express_4px\oms\OmsResponse;
 
 /**
- * @property string consignment_no
- * @property string tracking_no
+ * @property string consignment_no  出库委托单号
+ * @property string tracking_no 出库委托跟踪号
  */
 class CreateOutboundResponse extends OmsResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {

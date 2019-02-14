@@ -8,9 +8,9 @@ use express_4px\oms\OmsErrorCode;
 use express_4px\oms\OmsResponse;
 
 /**
- * @property string consignment_no
- * @property string status
- * @property string ref_no
+ * @property string consignment_no  出库委托单号
+ * @property string status  出库委托状态
+ * @property string ref_no  出库委托参考号
  */
 class CancelOutboundResponse extends OmsResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {

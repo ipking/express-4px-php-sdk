@@ -19,7 +19,7 @@ EOL;
 //构造请求参数
 $parameter = new GetOutboundBillingParameter( json_decode($json,true));
 //或者
-$parameter->ref_no = '';
+$parameter->consignment_no = 'OC9117151805020002';
 
 $client = new GetOutboundBillingClient($parameter);   //构造请求对象，将请求参数传入
 $client->setAuthInfo(config::$APP_KEY, config::$APP_SECRET,config::$ACCESS_TOKEN); //设置认证信息：AppKey, AppSecret, access_token

@@ -11,7 +11,7 @@ include_once dirname(dirname(__FILE__)) . "/config.inc.php";
 
 $json =<<<EOL
 {
-	"declare_product_code": "LSS001",
+	"declare_product_code": "LSS-api000026",
 	"declare_sku_list": [{
 		"sku_code": "LSS010"
 	}, {
@@ -23,7 +23,7 @@ EOL;
 //构造请求参数
 $parameter = new SkuBindDeclareParameter( json_decode($json,true));
 //或者
-$parameter->declare_product_code = "LSS001";
+$parameter->declare_product_code = "LSS-api000026";
 
 $client = new SkuBindDeclareClient($parameter);   //构造请求对象，将请求参数传入
 $client->setAuthInfo(config::$APP_KEY, config::$APP_SECRET,config::$ACCESS_TOKEN); //设置认证信息：AppKey, AppSecret, access_token

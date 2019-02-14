@@ -15,7 +15,7 @@ $json =<<<EOL
 	"from_warehouse_code": "CNDGMA",
 	"consignment_type": "S",
 	"logistics_service_info": {
-		"logistics_product_code": "QP0001",
+		"logistics_product_code": "API-TEST",
 		"return_service": "N",
 		"signature_service": "N"
 	},
@@ -34,7 +34,7 @@ $json =<<<EOL
 		"state": "AL",
 		"city": "CECIL",
 		"district": "District",
-		"post_code": "2154412",
+		"post_code": "21544",
 		"street": "JDHSDHFSDHFKS",
 		"house_number": "138",
 		"company": "4PX",

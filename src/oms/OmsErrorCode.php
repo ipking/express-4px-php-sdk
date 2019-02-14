@@ -31,7 +31,7 @@ class OmsErrorCode {
 		$errors = self::handleErrorList($errors);
 		$error_code = strtoupper($errors[0]['error_code']);
 		$error_data = $errors[0]['error_data'];
-		$error_msg = $errors[0]['error_msg'];
+		$error_msg = strtoupper($errors[0]['error_msg']);
 		!empty($code_message[$error_code]) && ($msg = $code_message[$error_code].($error_data?':'.$error_data:''));
 		
 		if($error_code != $error_msg){

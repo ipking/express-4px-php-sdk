@@ -23,6 +23,6 @@ class EditSkuPictureClient extends OmsClient {
 
 	public function send() {
 		$rsp_data = parent::send();
-		return new EditSkuPictureResponse($rsp_data['result'],$rsp_data['errors'], $rsp_data['msg'], $rsp_data['data']);
+		return new EditSkuPictureResponse($rsp_data['result'],$rsp_data['errors'], $rsp_data['msg'], ['data'=>$rsp_data['data']]);
 	}
 }

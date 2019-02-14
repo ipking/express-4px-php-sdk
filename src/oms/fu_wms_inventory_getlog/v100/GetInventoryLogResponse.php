@@ -6,7 +6,7 @@
 namespace express_4px\oms\fu_wms_inventory_getlog\v100;
 
 use express_4px\oms\fu_wms_inventory_getlog\v100\data_type\SellerInventoryList;
-use express_4px\oms\OmsErrorCode;
+use express_4px\oms\OmsErrorMsg;
 use express_4px\oms\OmsResponse;
 
 /**
@@ -17,7 +17,7 @@ use express_4px\oms\OmsResponse;
  */
 class GetInventoryLogResponse extends OmsResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
-		$msg = OmsErrorCode::getMsg(GetInventoryLogErrorCode::$codeMessageMap,$errors);
+		$msg = OmsErrorMsg::getMsg(GetInventoryLogErrorCode::$codeMessageMap,$errors);
 		$msg and $message = $msg;
 		parent::__construct($result,$errors, $message, $data, array(
 			'data'      => [self::PARAM_TYPE_LIST, self::PARAM_OPTIONAL, SellerInventoryList::class],

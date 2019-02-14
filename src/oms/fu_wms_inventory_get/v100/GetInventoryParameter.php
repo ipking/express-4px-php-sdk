@@ -24,8 +24,8 @@ class GetInventoryParameter extends OmsParameter
 			'lstsku'         => [self::PARAM_TYPE_LIST, self::PARAM_OPTIONAL,self::PARAM_TYPE_STRING],
 			'lstbatch_no'    => [self::PARAM_TYPE_LIST, self::PARAM_OPTIONAL,self::PARAM_TYPE_STRING],
 			'warehouse_code' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'page_no'        => [self::PARAM_TYPE_NUM, self::PARAM_OPTIONAL],
-			'page_size'      => [self::PARAM_TYPE_NUM, self::PARAM_OPTIONAL],
+			'page_no'        => [self::PARAM_TYPE_NUMBER, self::PARAM_OPTIONAL],
+			'page_size'      => [self::PARAM_TYPE_NUMBER, self::PARAM_OPTIONAL],
 		));
 	}
 }

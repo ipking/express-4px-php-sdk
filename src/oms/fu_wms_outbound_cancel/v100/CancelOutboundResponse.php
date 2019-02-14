@@ -4,7 +4,7 @@
  */
 
 namespace express_4px\oms\fu_wms_outbound_cancel\v100;
-use express_4px\oms\OmsErrorCode;
+use express_4px\oms\OmsErrorMsg;
 use express_4px\oms\OmsResponse;
 
 /**
@@ -14,7 +14,7 @@ use express_4px\oms\OmsResponse;
  */
 class CancelOutboundResponse extends OmsResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
-		$msg = OmsErrorCode::getMsg(CancelOutboundErrorCode::$codeMessageMap,$errors);
+		$msg = OmsErrorMsg::getMsg(CancelOutboundErrorCode::$codeMessageMap,$errors);
 		$msg and $message = $msg;
 		parent::__construct($result,$errors, $message, $data, array(
 			'consignment_no' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],

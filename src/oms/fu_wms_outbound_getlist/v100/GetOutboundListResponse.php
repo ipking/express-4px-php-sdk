@@ -5,7 +5,7 @@
 
 namespace express_4px\oms\fu_wms_outbound_getlist\v100;
 use express_4px\oms\fu_wms_outbound_getlist\v100\data_type\OutboundList;
-use express_4px\oms\OmsErrorCode;
+use express_4px\oms\OmsErrorMsg;
 use express_4px\oms\OmsResponse;
 
 /**
@@ -16,7 +16,7 @@ use express_4px\oms\OmsResponse;
  */
 class GetOutboundListResponse extends OmsResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
-		$msg = OmsErrorCode::getMsg(GetOutboundListErrorCode::$codeMessageMap,$errors);
+		$msg = OmsErrorMsg::getMsg(GetOutboundListErrorCode::$codeMessageMap,$errors);
 		$msg and $message = $msg;
 		parent::__construct($result,$errors, $message, $data, array(
 			'data'      => [self::PARAM_TYPE_LIST, self::PARAM_OPTIONAL, OutboundList::class],

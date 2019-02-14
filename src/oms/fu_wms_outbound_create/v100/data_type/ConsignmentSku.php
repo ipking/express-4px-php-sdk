@@ -18,7 +18,7 @@ class ConsignmentSku extends OmsParameter
 	{
 		parent::__construct($data, array(
 			'sku_code'               => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
-			'qty'                    => [self::PARAM_TYPE_NUM, self::PARAM_REQUIRED],
+			'qty'                    => [self::PARAM_TYPE_NUMBER, self::PARAM_REQUIRED],
 			'stock_quality'          => [self::PARAM_TYPE_ENUM, self::PARAM_REQUIRED,StockQualityEnum::class],
 			'batch_no'               => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'unit_price'             => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],

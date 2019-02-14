@@ -61,7 +61,7 @@ class CreateOutboundParameter extends OmsParameter
 			'sales_no'               => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'insure_services'        => [self::PARAM_TYPE_ENUM, self::PARAM_OPTIONAL,InsureServicesEnum::class],
 			'currency'               => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'insure_value'           => [self::PARAM_TYPE_NUM, self::PARAM_OPTIONAL],
+			'insure_value'           => [self::PARAM_TYPE_NUMBER, self::PARAM_OPTIONAL],
 			'remark'                 => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'oconsignment_desc'      => [self::PARAM_TYPE_OBJECT, self::PARAM_REQUIRED,ConsignmentDesc::class],
 			'identity_info'          => [self::PARAM_TYPE_OBJECT, self::PARAM_OPTIONAL,IdentityInfo::class],

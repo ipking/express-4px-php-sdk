@@ -50,8 +50,8 @@ class GetOutboundListParameter extends OmsParameter
 			'create_time_end'        => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'complete_time_start'    => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'complete_time_end'      => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'page_no'                => [self::PARAM_TYPE_NUM, self::PARAM_OPTIONAL],
-			'page_size'              => [self::PARAM_TYPE_NUM, self::PARAM_OPTIONAL],
+			'page_no'                => [self::PARAM_TYPE_NUMBER, self::PARAM_OPTIONAL],
+			'page_size'              => [self::PARAM_TYPE_NUMBER, self::PARAM_OPTIONAL],
 			'customer_code'          => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 		));
 	}

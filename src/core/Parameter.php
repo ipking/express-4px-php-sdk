@@ -8,7 +8,7 @@ class Parameter extends DataProto{
 	const PARAM_REQUIRED = 'required';
 	const PARAM_OPTIONAL = 'optional';
 	
-	const PARAM_TYPE_NUM = 'num';
+	const PARAM_TYPE_NUMBER = 'number';
 	const PARAM_TYPE_STRING = 'string';
 	const PARAM_TYPE_OBJECT = 'object';
 	const PARAM_TYPE_ARRAY = 'array';
@@ -25,7 +25,7 @@ class Parameter extends DataProto{
 				case self::PARAM_TYPE_ARRAY:
 					$items = [];
 					switch($ext_type){
-						case self::PARAM_TYPE_NUM:
+						case self::PARAM_TYPE_NUMBER:
 						case self::PARAM_TYPE_STRING:
 							$items = (array)$data[$field];
 							break;
@@ -79,14 +79,14 @@ class Parameter extends DataProto{
 		if($required == self::PARAM_REQUIRED && (!isset($value) || $value==='')){
 			throw new ParamValidateException($field.' parameter required');
 		}
-		if($required == self::PARAM_REQUIRED && in_array($type, [self::PARAM_TYPE_NUM, self::PARAM_TYPE_STRING]) && strlen($value)<0){
+		if($required == self::PARAM_REQUIRED && in_array($type, [self::PARAM_TYPE_NUMBER, self::PARAM_TYPE_STRING]) && strlen($value)<0){
 			throw new ParamValidateException($field.'('.$value.') : scala parameters required');
 		}
 		if(!isset($value)){
 			return;
 		}
 		switch($type){
-			case self::PARAM_TYPE_NUM:
+			case self::PARAM_TYPE_NUMBER:
 				if(!is_numeric($value)){
 					throw new ParamValidateException('parameter ['.$field.'] type error, <number> required, <'.gettype($value).'> given');
 				}
@@ -103,7 +103,7 @@ class Parameter extends DataProto{
 					throw new ParamValidateException('array parameter type error');
 				}
 				switch($ext_define_type){
-					case self::PARAM_TYPE_NUM:
+					case self::PARAM_TYPE_NUMBER:
 					case self::PARAM_TYPE_STRING:
 						foreach($value as $k=>$val){
 							$this->validate([$ext_define_type, $required], $val, $k);

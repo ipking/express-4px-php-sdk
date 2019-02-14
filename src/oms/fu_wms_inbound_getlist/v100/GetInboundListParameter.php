@@ -33,8 +33,8 @@ class GetInboundListParameter extends OmsParameter
 			'create_time_end'        => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
 			'logistics_product_code' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'status'                 => [self::PARAM_TYPE_ENUM, self::PARAM_OPTIONAL,StatusEnum::class],
-			'page_no'                => [self::PARAM_TYPE_NUM, self::PARAM_OPTIONAL],
-			'page_size'              => [self::PARAM_TYPE_NUM, self::PARAM_OPTIONAL],
+			'page_no'                => [self::PARAM_TYPE_NUMBER, self::PARAM_OPTIONAL],
+			'page_size'              => [self::PARAM_TYPE_NUMBER, self::PARAM_OPTIONAL],
 			'customer_code'          => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'4px_tracking_no'        => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 		));

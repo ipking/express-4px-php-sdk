@@ -30,8 +30,8 @@ class GetInventoryLogParameter extends OmsParameter
 			'warehouse_code'    => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'create_time_start' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'create_time_end'   => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'page_no'           => [self::PARAM_TYPE_NUM, self::PARAM_OPTIONAL],
-			'page_size'         => [self::PARAM_TYPE_NUM, self::PARAM_OPTIONAL],
+			'page_no'           => [self::PARAM_TYPE_NUMBER, self::PARAM_OPTIONAL],
+			'page_size'         => [self::PARAM_TYPE_NUMBER, self::PARAM_OPTIONAL],
 		));
 	}
 }

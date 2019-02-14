@@ -18,7 +18,7 @@ class Response extends DataProto{
 	const PARAM_REQUIRED = 'required';
 	const PARAM_OPTIONAL = 'optional';
 	
-	const PARAM_TYPE_NUM = 'num';
+	const PARAM_TYPE_NUMBER = 'number';
 	const PARAM_TYPE_STRING = 'string';
 	const PARAM_TYPE_OBJECT = 'object';
 	const PARAM_TYPE_ARRAY = 'array';
@@ -39,7 +39,7 @@ class Response extends DataProto{
 				case self::PARAM_TYPE_ARRAY:
 					$items = [];
 					switch($ext_type){
-						case self::PARAM_TYPE_NUM:
+						case self::PARAM_TYPE_NUMBER:
 						case self::PARAM_TYPE_STRING:
 							$items = (array)$data[$field];
 							break;

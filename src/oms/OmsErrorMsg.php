@@ -25,7 +25,7 @@ class OmsErrorMsg {
 	
 	public static function getMsg($code_message,&$errors){
 		$msg = '';
-		if(!$errors){
+		if(!$errors or !$code_message){
 			return $msg;
 		}
 		$errors = self::handleErrorList($errors);

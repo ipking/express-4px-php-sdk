@@ -9,7 +9,7 @@ use express_4px\oms\OmsErrorMsg;
 use express_4px\oms\OmsResponse;
 
 /**
- * @property MeasureUnit[] measure_unit_list    计量单位
+ * @property MeasureUnit[] measure_unit_list    计量单位列表
  */
 class GetMeasureUnitListResponse extends OmsResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {

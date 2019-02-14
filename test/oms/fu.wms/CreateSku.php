@@ -52,6 +52,7 @@ EOL;
 
 //构造请求参数
 $parameter = new CreateSkuParameter( json_decode($json,true));
+//或者
 $parameter->sku_code = 'SKUCODE1';
 
 $client = new CreateSkuClient($parameter);   //构造请求对象，将请求参数传入

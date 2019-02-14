@@ -2,9 +2,6 @@
 
 namespace express_4px\oms\com_basis_declare_create\v100\data_type;
 
-use express_4px\oms\data_type\basis_declare\DeclareTypeEnum;
-use express_4px\oms\data_type\common\CountryEnum;
-use express_4px\oms\data_type\common\CurrencyEnum;
 use express_4px\oms\OmsParameter;
 
 /**

@@ -18617,5 +18617,32 @@ $config_arr = json_decode($json,true);
 
 class GoodsCategoryList
 {
-
+	private static $category_list;
+	
+	public static function setData($list){
+		foreach($list as $item){
+			self::$category_list[$item['id']] = $item;
+		}
+	}
+	
+	public static function getAllList(){
+		return self::$category_list;
+	}
+	
+	public static function getChildList(){
+		static $list;
+		if($list){
+			return $list;
+		}
+		$list = [];
+		foreach(self::$category_list as $item){
+			if($item['isParent']){
+				continue;
+			}
+			$list[$item['id']] = $item;
+		}
+		return $list;
+	}
 }
+
+GoodsCategoryList::setData($config_arr['data']);

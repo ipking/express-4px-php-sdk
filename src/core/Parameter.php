@@ -112,7 +112,7 @@ class Parameter extends DataProto{
 					
 					default:
 						if(!is_subclass_of($ext_define_type, Parameter::class)){
-							throw new \Exception('field define type error, must inherit from Parameter');
+							throw new ParamValidateException('field define type error, must inherit from Parameter');
 						}
 						$tmp = new $ext_define_type();
 						/** @var Parameter $tmp */

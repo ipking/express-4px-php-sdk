@@ -33,6 +33,11 @@ abstract class Client{
 	/** @var Parameter $param */
 	protected $param;
 	
+	/** @var string $client_response */
+	protected $client_response;
+	
+	private static $callback;
+	
 	/**
 	 * 应用接入申请的AppKey
 	 */
@@ -59,6 +64,13 @@ abstract class Client{
 		self::$app_secret = $app_secret;
 		self::$access_token = $access_token;
 	}
+	
+	/**
+	 * @param $cb
+	 */
+	public static function setSendCallback($cb){
+		self::$callback = $cb;
+	}
 
 	/**
 	 * @param \express_4px\core\Parameter $param
@@ -67,6 +79,47 @@ abstract class Client{
 	public function setParam(Parameter $param){
 		$this->param = $param;
 		return $this;
+	}
+	
+	/**
+	 * @return \express_4px\core\Parameter $param
+	 */
+	public function getParam(){
+		return $this->param;
+	}
+	/**
+	 * @return string
+	 */
+	public function getResponse(){
+		return $this->client_response;
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getFormat(){
+		return $this->format;
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getMethod(){
+		return $this->method;
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getTimestamp(){
+		return $this->timestamp;
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getVersion(){
+		return $this->v;
 	}
 
 	/**
@@ -111,12 +164,17 @@ abstract class Client{
 			echo "\n+++++++++++++++++++ REQ +++++++++++++++++++\n";
 			echo "URL : ".$this->url.'?'.join('&',$url_param_str);
 		}
-		$str = Curl::postInJSON($this->url.'?'.join('&',$url_param_str), $arr_data);
+		$this->client_response = Curl::postInJSON($this->url.'?'.join('&',$url_param_str), $arr_data);
 		if(self::$debug){
 			echo "\n============== RSP START ==============\n";
-			echo $str;
+			echo $this->client_response;
 			echo "\n============== RSP END ==============\n";
 		}
-		return \json_decode($str, true);
+		
+		if(is_callable(self::$callback)){
+			$callback = self::$callback;
+			$callback($this);
+		}
+		return \json_decode($this->client_response, true);
 	}
 }

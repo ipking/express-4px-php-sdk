@@ -55,6 +55,10 @@ abstract class DataProto implements Iterator, ArrayAccess, \JsonSerializable {
 	 * @return array
 	 */
 	public function getDataAsArray(){
+		static $tmp;
+		if($tmp){
+			return $tmp;
+		}
 		$tmp = [];
 		foreach($this->data?:[] as $k=>$item){
 			if($item instanceof Parameter){

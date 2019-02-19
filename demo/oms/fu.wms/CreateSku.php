@@ -28,7 +28,7 @@ $json =<<<EOL
 	"release_flag": "",
 	"customer_code": "",
 	"declare_product_code": "",
-	"sku_code": "SKUCODE1",
+	"sku_code": "SKUCODE2",
 	"sku_name": "SKUNAME1",
 	"uom": "KGM",
 	"wrapping": "S",
@@ -53,7 +53,7 @@ EOL;
 //构造请求参数
 $parameter = new CreateSkuParameter( json_decode($json,true));
 //或者
-$parameter->sku_code = 'SKUCODE1';
+$parameter->sku_code = 'SKUCODE2';
 
 $client = new CreateSkuClient($parameter);   //构造请求对象，将请求参数传入
 $client->setAuthInfo(config::$APP_KEY, config::$APP_SECRET,config::$ACCESS_TOKEN); //设置认证信息：AppKey, AppSecret, access_token

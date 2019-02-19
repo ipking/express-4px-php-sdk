@@ -25,7 +25,7 @@ if ( $rsp->isSuccess() ) {
 	//var_dump($data);
 	
 	foreach($rsp->warehouse_list as $item){
-		echo $item->warehouse_code.PHP_EOL;
+		echo $item->warehouse_code."\t";
 		echo $item->warehouse_name_cn.PHP_EOL;
 		
 	}

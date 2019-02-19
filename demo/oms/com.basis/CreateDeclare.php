@@ -13,26 +13,14 @@ $json =<<<EOL
 	"declare_category_id": "303120",
 	"declare_country_list": [{
 			"brand": "出口品牌",
-			"certificate_url": "https://imgsa.baidu.com/baike/pic/item/00e93901213fb80e2f604bc43dd12f2eb938946b.jpg",
 			"currency": "USD",
 			"declare_country": "CN",
 			"declare_type": "I",
 			"declare_unit_price": "2.33"
-		},
-		{
-			"brand": "进口品牌",
-			"certificate_url": "https://imgsa.baidu.com/baike/pic/item/00e93901213fb80e2f604bc43dd12f2eb938946b.jpg",
-			"currency": "USD",
-			"declare_country": "GB",
-			"declare_type": "I",
-			"declare_unit_price": "1.11"
-		}
-	],
-	"declare_product_code": "LSS-api000026",
+	}],
+	"declare_product_code": "LSS-api0000261",
 	"declare_sku_list": [{
-		"sku_code": "SKUCODE1"
-	}, {
-		"sku_code": "SKUCODE"
+		"sku_code": "SKUCODE2"
 	}],
 	"material": "塑料",
 	"model": "型号",
@@ -45,7 +33,7 @@ EOL;
 //构造请求参数
 $parameter = new CreateDeclareParameter( json_decode($json,true));
 //或者
-$parameter->declare_product_code = 'LSS-api000026';
+$parameter->declare_product_code = 'LSS-api0000261';
 
 $client = new CreateDeclareClient($parameter);   //构造请求对象，将请求参数传入
 $client->setAuthInfo(config::$APP_KEY, config::$APP_SECRET,config::$ACCESS_TOKEN); //设置认证信息：AppKey, AppSecret, access_token

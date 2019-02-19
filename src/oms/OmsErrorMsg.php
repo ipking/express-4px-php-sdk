@@ -8,8 +8,14 @@ namespace express_4px\oms;
 class OmsErrorMsg {
 	
 	private static function handleErrorList($errors){
+		$err_list = [];
+		if(!$errors[0]){
+			$err_list[] = $errors;
+		}else{
+			$err_list = $errors;
+		}
 		$list = [];
-		foreach($errors?:[] as $error){
+		foreach($err_list?:[] as $error){
 			$tmp = [];
 			foreach($error as $key=>$value){
 				$t_key = strtolower($key);

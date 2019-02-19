@@ -15,7 +15,7 @@ use express_4px\oms\OmsResponse;
  */
 class GetRmaResponse extends OmsResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
-		$msg = OmsErrorMsg::getMsg(GetRmaCode::$codeMessageMap,$errors);
+		$msg = OmsErrorMsg::getMsg(GetRmaErrorCode::$codeMessageMap,$errors);
 		$msg and $message = $msg;
 		parent::__construct($result,$errors, $message, $data, array(
 			'rma_no'               => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],

@@ -2,7 +2,7 @@
 
 namespace express_4px\oms\re_grs_rmainfo_get\v100;
 
-class GetRmaCode{
+class GetRmaErrorCode{
 	const CODE_2001 = '2001';
 	const CODE_2002 = '2002';
 	const CODE_22001 = '22001';

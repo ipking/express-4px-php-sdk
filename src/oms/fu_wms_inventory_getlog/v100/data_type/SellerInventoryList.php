@@ -33,10 +33,10 @@ class SellerInventoryList extends OmsParameter
 			'warehouse_stock' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'io_qty'          => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'balance_stock'   => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'business_type'   => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'business_type'   => [self::PARAM_TYPE_ENUM, self::PARAM_OPTIONAL,BusinessType::class],
 			'business_ref_no' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'create_time'     => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'journal_type'    => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'journal_type'    => [self::PARAM_TYPE_ENUM, self::PARAM_OPTIONAL,JournalType::class],
 		));
 	}
 }

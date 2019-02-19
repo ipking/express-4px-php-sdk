@@ -1,6 +1,6 @@
 <?php
 /**
- * 创建申报产品
+ * 修改申报产品
  */
 
 namespace express_4px\oms\com_basis_declare_edit\v100;

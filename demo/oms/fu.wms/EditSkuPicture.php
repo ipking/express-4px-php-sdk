@@ -1,6 +1,6 @@
 <?php
 /**
- * 创建SKU示例
+ * 修改SKU图片示例
  */
 use express_4px\oms\fu_wms_sku_editpicture\v100\EditSkuPictureClient;
 use express_4px\oms\fu_wms_sku_editpicture\v100\EditSkuPictureParameter;

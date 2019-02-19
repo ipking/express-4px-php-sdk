@@ -1,6 +1,6 @@
 <?php
 /**
- * 查询仓库信息示例
+ * 申报产品关联SKU示例
  */
 use express_4px\oms\com_basis_declare_skubinddeclare\v100\SkuBindDeclareClient;
 use express_4px\oms\com_basis_declare_skubinddeclare\v100\SkuBindDeclareParameter;

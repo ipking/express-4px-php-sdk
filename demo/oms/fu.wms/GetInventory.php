@@ -1,6 +1,6 @@
 <?php
 /**
- * 库存查询示例
+ * 查询库存库龄示例
  */
 use express_4px\oms\fu_wms_inventory_get\v100\GetInventoryClient;
 use express_4px\oms\fu_wms_inventory_get\v100\GetInventoryParameter;

@@ -1,6 +1,6 @@
 <?php
 /**
- * 批量查询入库委托示例
+ * 查询库存流水示例
  */
 
 use express_4px\oms\fu_wms_inventory_getlog\v100\GetInventoryLogClient;

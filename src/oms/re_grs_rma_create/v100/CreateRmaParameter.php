@@ -5,7 +5,6 @@
 
 namespace express_4px\oms\re_grs_rma_create\v100;
 
-
 use express_4px\oms\OmsParameter;
 use express_4px\oms\re_grs_rma_create\v100\data_type\RmaSku;
 
@@ -20,7 +19,6 @@ use express_4px\oms\re_grs_rma_create\v100\data_type\RmaSku;
  * @property String weight  客户退到grs收货仓库商品的重量，单位：千克(Kg)，精确到3位小数
  * @property String remark  客户备注
  * @property RmaSku[] lstsku
-
  */
 class CreateRmaParameter extends OmsParameter
 {

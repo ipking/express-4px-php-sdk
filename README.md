@@ -1,6 +1,7 @@
 # 关于
 4PX 递四方  PHP api for http://open.4px.com
-本库仅做示范用，并不保证完全无bug
+本库仅做示范用，并不保证完全无bug。
+
 另外，作者会不定期更新本库，但不保证与官方API接口文档同步，因此一切以[官方文档](http://open.4px.com/apiInfo/api)为准。
 
 

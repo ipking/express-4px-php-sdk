@@ -29,8 +29,17 @@
         ├── tr.order// 轨迹服务 相关测试文件夹
         └── config.inc.php //测试用例的配置信息  AppKey AppSecret 正式环境/沙箱环境/调试等
 ```
-目前只更新了 
+# 本SDK更新进度 
 1、订单履约服务
+
 2、退件服务
+
 3、公共服务
+
 4、轨迹服务
+# 注意: 沙箱环境
+仓库代码(warehouse_code)  只支持 CNHKGB和CNDGMA
+
+物流产品代码(logistics_product_code)	只支持 API-TEST
+
+否则会出现 "程序内部错误，操作失败！" 之类的错误信息

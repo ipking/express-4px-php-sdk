@@ -39,7 +39,7 @@ if ( $rsp->isSuccess() ) {
 	//var_dump($data);
 	
 	foreach($rsp->logistics_product_list as $item){
-		echo $item->logistics_product_code.PHP_EOL;
+		echo $item->logistics_product_code."\t";
 		echo $item->logistics_product_name_cn.PHP_EOL;
 		
 	}

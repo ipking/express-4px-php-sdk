@@ -38,9 +38,11 @@
 3、公共服务
 
 4、轨迹服务
-# 注意: 沙箱环境
-仓库代码(warehouse_code)  只支持 CNHKGB和CNDGMA
+# 注意
+在沙箱环境：
 
-物流产品代码(logistics_product_code)	只支持 API-TEST
+仓库代码(warehouse_code)  只支持 CNHKGB和CNDGMA。
 
-否则会出现 "程序内部错误，操作失败！" 之类的错误信息
+物流产品代码(logistics_product_code)	只支持 API-TEST。
+
+否则会出现 "程序内部错误，操作失败！" 之类的错误信息。

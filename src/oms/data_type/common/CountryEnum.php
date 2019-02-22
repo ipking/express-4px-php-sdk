@@ -4,6 +4,7 @@ namespace express_4px\oms\data_type\common;
 
 class CountryEnum
 {
+	const COUNTRY_A = 'A';
 	const COUNTRY_AF = 'AF';
 	const COUNTRY_AX = 'AX';
 	const COUNTRY_AL = 'AL';
@@ -266,6 +267,7 @@ class CountryEnum
 	const COUNTRY_HI = 'HI';
 	
 	static $map = array(
+		self::COUNTRY_A => 'ALL',//代表所有国家
 		self::COUNTRY_AF => '阿富汗',
 		self::COUNTRY_AX => '奥兰群岛',
 		self::COUNTRY_AL => '阿尔巴尼亚',

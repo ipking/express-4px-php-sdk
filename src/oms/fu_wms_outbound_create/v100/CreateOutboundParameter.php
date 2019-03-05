@@ -12,6 +12,7 @@ use express_4px\oms\data_type\outbound\OcustomsServiceEnum;
 use express_4px\oms\data_type\outbound\OdaEnum;
 use express_4px\oms\data_type\outbound\SalesPlatformEnum;
 use express_4px\oms\fu_wms_outbound_create\v100\data_type\ConsignmentDesc;
+use express_4px\oms\fu_wms_outbound_create\v100\data_type\ConsignmentFBA;
 use express_4px\oms\fu_wms_outbound_create\v100\data_type\ConsignmentSku;
 use express_4px\oms\fu_wms_outbound_create\v100\data_type\IdentityInfo;
 use express_4px\oms\fu_wms_outbound_create\v100\data_type\LogisticsServiceInfo;
@@ -40,6 +41,7 @@ use express_4px\oms\OmsParameter;
  * @property ConsignmentSku[] oconsignment_sku  出库委托SKU集合。注：单次最大支持100种SKU种类创建，如超出请分批创建。
  * @property String icustoms_service    进口报关类型;
  * @property String ocustoms_service    出口报关类型;      
+ * @property String fba_shipment_id    FBA渠道派送ID.*注：请正确填写Shipment ID,如填写有误导致亚马逊拒收，4PX不承担任何责任,Shipment ID可以从亚马逊后台获取.
  */
 class CreateOutboundParameter extends OmsParameter
 {
@@ -68,6 +70,8 @@ class CreateOutboundParameter extends OmsParameter
 			'oconsignment_sku'       => [self::PARAM_TYPE_LIST, self::PARAM_REQUIRED,ConsignmentSku::class],
 			'icustoms_service'       => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL,IcustomsServiceEnum::class],
 			'ocustoms_service'       => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL,OcustomsServiceEnum::class],
+			'fba_shipment_id'       => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'oconsignment_fba'       => [self::PARAM_TYPE_LIST, self::PARAM_OPTIONAL,ConsignmentFBA::class],
 		));
 	}
 }

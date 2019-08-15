@@ -161,16 +161,16 @@ abstract class Client{
 		self::$access_token and $url_param_str[] = 'access_token='.self::$access_token;
 		
 		if(self::$debug){
-			echo "\n+++++++++++++++++++ REQ +++++++++++++++++++\n";
+			echo "\n+++++++++++++++++ REQ +++++++++++++++\n";
 			echo $this->url.'?'.join('&',$url_param_str).PHP_EOL;
 			echo $json_data;
-			echo "\n+++++++++++++++++++ REQ +++++++++++++++++++\n";
+			echo "\n+++++++++++++++++ REQ +++++++++++++++\n";
 		}
 		$this->client_response = Curl::postInJSON($this->url.'?'.join('&',$url_param_str), $arr_data);
 		if(self::$debug){
-			echo "\n============== RSP START ==============\n";
+			echo "\n============== RSP =================\n";
 			echo $this->client_response;
-			echo "\n============== RSP END ==============\n";
+			echo "\n============== RSP =================\n";
 		}
 		
 		if(is_callable(self::$callback)){

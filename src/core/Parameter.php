@@ -93,7 +93,7 @@ class Parameter extends DataProto{
 				break;
 				
 			case self::PARAM_TYPE_STRING:
-				if(!is_string($value)){
+				if(!is_string($value) and !is_numeric($value)){
 					throw new ParamValidateException('parameter ['.$field.'] type error, <string> required, <'.gettype($value).'> given');
 				}
 				break;

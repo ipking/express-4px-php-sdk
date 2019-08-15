@@ -20,10 +20,10 @@ class ConsignmentFBA extends OmsParameter
 		parent::__construct($data, array(
 			'fba_box_code'        => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'im_code'             => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'fba_im_quantity'     => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'fba_im_quantity'     => [self::PARAM_TYPE_NUMBER, self::PARAM_OPTIONAL],
 			'fba_im_code'         => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'fba_item_label_sign' => [self::PARAM_TYPE_ENUM, self::PARAM_OPTIONAL,FBAItemLabelSignEnum::class],
-			'fba_label_quantity'  => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'fba_label_quantity'  => [self::PARAM_TYPE_NUMBER, self::PARAM_OPTIONAL],
 		));
 	}
 }

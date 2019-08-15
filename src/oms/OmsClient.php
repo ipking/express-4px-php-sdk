@@ -15,16 +15,23 @@ class OmsClient extends Client{
 	 * 默认为沙箱环境
 	 */
 	private static $env = self::ENV_DEV;
+	
 	/**
 	 * 正式环境
 	 */
 	private static $host_prod = 'http://open.4px.com/router/api/service';
+	
 	/**
 	 * 沙箱环境
 	 */
 	private static $host_dev = 'http://open.sandbox.4px.com/router/api/service';
 	
-	
+	/**
+	 * 沙箱环境
+	 */
+	public static function devEnv(){
+		self::$env = self::ENV_DEV;
+	}
 	
 	/**
 	 * 正式环境

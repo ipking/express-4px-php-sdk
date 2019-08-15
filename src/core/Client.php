@@ -162,7 +162,9 @@ abstract class Client{
 		
 		if(self::$debug){
 			echo "\n+++++++++++++++++++ REQ +++++++++++++++++++\n";
-			echo "URL : ".$this->url.'?'.join('&',$url_param_str);
+			echo $this->url.'?'.join('&',$url_param_str).PHP_EOL;
+			echo $json_data;
+			echo "\n+++++++++++++++++++ REQ +++++++++++++++++++\n";
 		}
 		$this->client_response = Curl::postInJSON($this->url.'?'.join('&',$url_param_str), $arr_data);
 		if(self::$debug){

@@ -28,7 +28,6 @@ $parameter = new GetLogisticsProductListParameter( json_decode($json,true));
 $parameter->service_code = \express_4px\oms\data_type\basis_declare\ServiceCodeEnum::SERVICE_CODE_F;
 
 $client = new GetLogisticsProductListClient($parameter);   //构造请求对象，将请求参数传入
-$client->setAuthInfo(config::$APP_KEY, config::$APP_SECRET,config::$ACCESS_TOKEN); //设置认证信息：AppKey, AppSecret, access_token
 
 //发送请求，获取返回数据
 $rsp = $client->send();

@@ -23,10 +23,10 @@ class GetRmaInfoListParameter extends OmsParameter
 		parent::__construct($data, array(
 			'rma_no'               => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'received_shipping_no' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'recevier_time_start'  => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
-			'recevier_time_end'    => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
-			'page_start'           => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
-			'page_count'           => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
+			'recevier_time_start'  => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'recevier_time_end'    => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'page_start'           => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'page_count'           => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 		));
 	}
 }

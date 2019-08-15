@@ -17,7 +17,7 @@ EOL;
 //构造请求参数
 $parameter = new GetRmaParameter( json_decode($json,true));
 //或者
-$parameter->rma_no = 'OC9000881907310136';
+$parameter->rma_no = 'GRSRAASCN190815CM7457';
 
 $client = new GetRmaClient($parameter);   //构造请求对象，将请求参数传入
 

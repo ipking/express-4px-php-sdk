@@ -10,21 +10,21 @@ include_once dirname(dirname(__FILE__)) . "/config.inc.php";
 
 $json =<<<EOL
 {
-    "user_id":"d8b0a542b4fb4135a3e4eda6eb4c96c5",
+    "user_id":"69da7738d17c40fb8bb98b207ceede01",
     "ref_no":"u033411011111111127",
     "warehouse_code":"USLAXA",
-    "services_product_code":"SS",
-    "received_shipping_no":"m034313111101111611114",
+    "services_product_code":"CS",
+    "received_shipping_no":"",
     "package_photograph_service":"Y",
     "weight":"10.00",
     "remark":"0323002",
     "lstsku":[
         {
-            "sku_code":"XL001",
+            "sku_code":"06-LK826 ",
             "plan_qty":2,
             "sku_photograph_service":"Y",
             "replace_product_code_service":"Y",
-            "new_product_code":"XL001",
+            "new_product_code":"06-LK826 ",
             "expired_date":""
         }
     ]
@@ -34,7 +34,7 @@ EOL;
 //构造请求参数
 $parameter = new CreateRmaParameter( json_decode($json,true));
 //或者
-$parameter->ref_no = 'u033411011111111127';
+$parameter->ref_no = 'u033411011111111129';
 
 $client = new CreateRmaClient($parameter);   //构造请求对象，将请求参数传入
 

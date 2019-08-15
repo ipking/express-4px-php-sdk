@@ -10,11 +10,11 @@ include_once dirname(dirname(__FILE__)) . "/config.inc.php";
 
 $json =<<<EOL
 {
-    "page_count": 100,
-    "page_start": 1,
+    "page_count": "",
+    "page_start": "",
     "received_shipping_no": "",
-    "recevier_time_end": "2019-08-15",
-    "recevier_time_start": "2019-07-01",
+    "recevier_time_end": "",
+    "recevier_time_start": "",
     "rma_no": ""
 }
 EOL;
